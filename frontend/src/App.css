@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f5;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes leftToRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightToLeft {
+  from {
+    transform: translateX(200px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: #dddddd;
+}
+
+.date-range input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.date-range input:focus {
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+.date-range span {
+  margin: 0 10px;
+}
+
+.date-range-label {
+  margin-right: 10px;
+  margin-left: 14px;
+}
+
+.clear-date-btn {
+  padding: 9px 16px;
+  background: #d6d5d5;
+  color: #3f3f3f;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.clear-date-btn:hover {
+  background: #cecece;
+}
+
+/* Search Wrapper */
+.search-wrapper {
+  position: relative;
+  width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #888;
+}
+
+select:hover {
+  border-color: #c9a0d8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+select:focus {
+  outline: none;
+  border-color: #c9a0d8;
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+select:active {
+  transform: translateY(0);
+}
+
+.edit-btn {
+  padding: 14px 25px;
+  background: #7a4caf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.edit-btn:hover {
+  background: #6a3b9c;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-actions button {
+  border-radius: 6px;
+}
+
+.edit-save-btn {
+  padding: 14px 25px;
+  background: #40a858;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.edit-save-btn:hover {
+  background: #39974f;
+}
+
+.edit-save-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.edit-cancel-btn {
+  padding: 14px 25px;
+  background: #e0e0e0;
+  color: #585858;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.edit-cancel-btn:hover {
+  background: #d5d5d5;
+}
+
+.edit-cancel-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.change-pass-btn {
+  padding: 14px 25px;
+  background: #3c3544;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-pass-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.change-pass-btn:hover {
+  background: #2d2833;
+}
+
+.logout-btn {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #b83434;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.logout-btn:hover {
+  background: #972c2c;
+}

@@ -1,0 +1,251 @@
+.invoice-details-container {
+  padding: 30px;
+  background: #f2f4f5;
+  min-height: 100vh;
+}
+
+.invoice-details-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoice-details-title {
+  font-weight: 500;
+  margin: 20px 0;
+  color: #3b3b3b;
+}
+
+.invoice-details-title :hover {
+  text-decoration: underline;
+}
+
+.invoice-details-title span {
+  cursor: pointer;
+}
+
+.invoice-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e7e7e7;
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.invoice-icon-box {
+  width: 90px;
+  height: 90px;
+  background: #6bb26a;
+  background: linear-gradient(0deg, #589257 0%, #6bb26a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.invoice-icon {
+  color: #ffffff;
+}
+
+.invoice-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.invoice-number {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.invoice-stock-card {
+  border: 1px solid #e7e7e7;
+  background: white;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoice-stock-header h3 {
+  font-weight: 500;
+}
+
+.invoice-total-items {
+  font-size: 16px;
+}
+
+.invoice-search-wrapper {
+  position: relative;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.invoice-search-wrapper input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.invoice-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.invoice-stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-stock-table th,
+.invoice-stock-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.invoice-stock-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.invoice-stock-table tr {
+  transition: all 0.2s ease;
+}
+
+.invoice-stock-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoice-stock-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.invoice-stock-table th:nth-child(1),
+.invoice-stock-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.invoice-stock-table th:nth-child(2),
+.invoice-stock-table td:nth-child(2) {
+  width: 100px;
+  text-align: left;
+}
+
+.invoice-stock-table th:nth-child(3),
+.invoice-stock-table td:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+.invoice-stock-table th:nth-child(4),
+.invoice-stock-table td:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+
+.invoice-stock-table th:nth-child(5),
+.invoice-stock-table td:nth-child(5) {
+  width: 100px;
+  text-align: center;
+}
+
+.invoice-stock-table th:nth-child(6),
+.invoice-stock-table td:nth-child(6) {
+  width: 100px;
+  text-align: center;
+}
+
+.stockcard {
+  font-weight: 600;
+}
+
+.stock-item-name {
+  font-weight: 500;
+}
+
+.stock-item-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+.invoice-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.invoice-edit-input {
+  width: 80px;
+  padding: 4px;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 22px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.invoice-actions .save-btn {
+  padding: 9px 20px;
+  background: #40a858;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invoice-actions .save-btn:hover {
+  background: #358c4a;
+}

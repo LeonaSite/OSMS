@@ -1,0 +1,97 @@
+.audit-container {
+  padding: 20px;
+  background-color: #f2f4f5;
+  min-height: 100vh;
+}
+
+.audit-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.audit-header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.audit-search {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 400px;
+}
+
+.audit-filters {
+  display: flex;
+  margin-left: 50px;
+}
+
+.audit-label-item {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.audit-label-item select {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.audit-label-item select:focus {
+  outline: none;
+  border-color: #c9a0d8;
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.audit-table th,
+.audit-table td {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.audit-table th {
+  background: #7e7085;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  font-size: 14px;
+}
+
+.audit-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.audit-table tr:hover {
+  background: #f8f2f8;
+}
+
+.audit-table th:nth-child(4),
+.audit-table td:nth-child(4) {
+  max-width: 800px;
+  text-align: left;
+}
+
+.audit-table td:nth-child(4) {
+  padding-right: 30px;
+}
+.audit-table th:nth-child(6),
+.audit-table td:nth-child(6) {
+  width: 120px;
+}
+
+.audit-table td:nth-child(6) {
+  text-align: right;
+}

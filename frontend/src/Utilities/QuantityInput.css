@@ -1,0 +1,52 @@
+.qty-input{
+  display:flex;
+  align-items:center;
+  gap:2px;
+}
+
+.qty-btn{
+  width:28px;
+  height:28px;
+  border:none;
+  background:none;
+  color:#69696b;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+.qty-btn:hover{
+  background:#dadada;
+}
+
+.qty-field{
+  width:60px;
+  text-align:center;
+  border:1px solid #ccc;
+  border-radius:4px;
+  height:28px;
+}
+
+.qty-field:focus{
+    outline: none;
+    border-color: #c9a0d8;
+    box-shadow: 0 0 0 2px rgba(201,160,216,0.2);
+}
+
+/* For Chrome, Safari, Edge, and Opera */
+.qty-field::-webkit-outer-spin-button,
+.qty-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.qty-field {
+  -moz-appearance: textfield;
+  appearance: textfield; /* Standard property for future-proofing */
+}
+
+.qty-btn:disabled{
+opacity:0.4;
+cursor:not-allowed;
+}

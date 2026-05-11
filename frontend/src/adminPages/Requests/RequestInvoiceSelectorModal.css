@@ -1,0 +1,249 @@
+.req-invoice-selector-modal {
+  background: #f3f3f3;
+  width: 1300px;
+  animation: fadeInScale 0.2s ease;
+}
+
+.req-invoice-selector-header {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #589257, #6bb26a);
+}
+
+.req-invoice-selector-body {
+  background: #fff;
+  padding-bottom: 0px;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 0px;
+}
+
+.invoice-list {
+  padding: 20px;
+}
+
+.req-invoice-header-list {
+  font-size: 15px;
+  margin-top: 0;
+  font-weight: 400;
+  color: #2c2c2c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 620px;
+}
+
+.req-invoice-header-list span {
+  font-size: 16px;
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.req-invoice-tool {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.req-invoice-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  max-height: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.req-invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+}
+
+.req-invoice-table th,
+.req-invoice-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.req-invoice-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.req-invoice-table tr {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.req-invoice-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.req-invoice-table tr:hover {
+  background: #f8f2f8;
+}
+
+.req-invoice-table tbody tr.row-active td {
+  border-top: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
+  background: #e8f3ff;
+}
+
+.req-invoice-table tbody tr.row-active td:first-child {
+  border-left: 2px solid #007bff;
+}
+
+.req-invoice-table tbody tr.row-active td:last-child {
+  border-right: 2px solid #007bff;
+}
+
+.req-invoice-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+  font-size: 10px;
+}
+
+.req-invoice-table th:nth-child(1),
+.req-invoice-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.req-invoice-table th:nth-child(2),
+.req-invoice-table td:nth-child(2) {
+  width: 300px;
+  text-align: left;
+}
+
+.req-invoice-table th:nth-child(3),
+.req-invoice-table td:nth-child(3) {
+  width: 100px;
+  text-align: left;
+}
+
+.req-invoice-table th:nth-child(4),
+.req-invoice-table td:nth-child(4) {
+  text-align: center;
+}
+
+/*SELECTED INVOICE*/
+.selected-invoices {
+  position: relative;
+  padding: 20px;
+  box-shadow: 2px 5px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selected-invoice-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected-invoice-header h3,
+.selected-invoice-header p {
+  font-size: 15px;
+  margin-top: 0;
+  font-weight: 400;
+  color: #2c2c2c;
+}
+
+.selected-invoice-header span {
+  font-size: 18px;
+  padding: 5px 14px;
+  color: #ffffff;
+  background: #589257;
+  border-radius: 5px;
+}
+
+.selected-invoice-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 400px;
+}
+
+.selected-invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.selected-invoice-table th,
+.selected-invoice-table td {
+  font-size: 14px;
+  padding: 10px 5px;
+}
+
+.selected-invoice-table th {
+  font-weight: 500;
+}
+
+.selected-invoice-table tbody tr:hover {
+  background: #faf5fa;
+}
+
+.selected-invoice-table td {
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.selected-invoice-table th:nth-child(1),
+.selected-invoice-table td:nth-child(1) {
+  text-align: left;
+}
+
+.selected-invoice-table th:nth-child(2),
+.selected-invoice-table td:nth-child(2) {
+  width: 60px;
+  text-align: center;
+}
+
+.qty-box {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.selected-invoice-footer {
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-invoice-footer h4 {
+  font-weight: 500;
+}
+
+.selected-invoice-buttons {
+  display: flex;
+  gap: 10px;
+  height: 30px;
+}
+
+.row-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.row-active {
+  background-color: #eaf3ff;
+}
+
+.req-invoice-checkbox:disabled {
+  cursor: not-allowed;
+}

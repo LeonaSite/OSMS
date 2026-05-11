@@ -1,0 +1,214 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: #312936;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 10px 10px 0px;
+
+  /* Critical changes below */
+  height: wrap; /* Ensure sidebar fills the layout height */
+  overflow-y: auto; /* If nav items are too many, sidebar will scroll internally */
+  flex-shrink: 0; /* Prevent the sidebar from squishing */
+  animation: leftToRight 0.5s ease-in-out forwards;
+  scrollbar-width: thin;
+  scrollbar-color: #636262 #312936;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nav-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #fefdff;
+}
+
+.sidebar-logo {
+  width: 50px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+/* Navigation links */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fefdff;
+  border-right: 3px #412b6b00 solid;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #8daceb15;
+  border-right: 3px #8daceb15 solid;
+  font-weight: 600;
+  color: #f7e6ff;
+}
+
+.nav-item.active {
+  background-color: #8daceb25;
+  border-right: 3px #412b6b solid;
+  font-weight: 600;
+  color: #f0edff;
+}
+
+.nav-item.active .nav-icons {
+  color: #f0edff;
+}
+
+.nav-item.active,
+.nav-item.active .nav-icons {
+  color: #d9b9f0;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+}
+
+.nav-icons {
+  font-size: 24px;
+  color: #fefdff;
+  margin-right: 8px;
+}
+
+.nav-divider {
+  border-top: 1px solid #ffffff54;
+  margin-bottom: 15px;
+}
+
+.nav-divider-title {
+  font-size: 15px;
+  color: #fefdff;
+  margin-bottom: 10px;
+}
+
+.admin-info {
+  margin-top: auto;
+  padding: 10px;
+  margin-left: -10px;
+  border: 1px #505050 solid;
+  background: #33333342;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.admin-info:hover {
+  background: #4d3e579c;
+  color: #f6e7ff;
+}
+
+.admin-name-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.admin-icon {
+  font-size: 30px;
+}
+
+.admin-name-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-name {
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.admin-dropdown {
+  position: absolute;
+  bottom: 80px;
+  left: 12px;
+  background: #2a232e;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: fadeInScale 0.2s ease;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.admin-dropdown p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.admin-dropdown button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Logout */
+.admin-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.admin-btn:hover {
+  background: #473f4e;
+}
+
+.admin-icon-btn {
+  font-size: 20px;
+}
+
+.nav-profile {
+  text-align: center;
+  background-color: #41435a;
+  padding: 20px;
+}
+
+.nav-admin-username {
+  font-weight: 600;
+}

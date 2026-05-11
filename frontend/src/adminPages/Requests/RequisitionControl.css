@@ -1,0 +1,220 @@
+.requisition-control-container {
+  padding: 20px;
+  background-color: #f2f4f5;
+  min-height: 100vh;
+}
+.requisition-control-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.requisition-control-search-filter {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.req-filtered {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.req-filtered select {
+  min-width: 200px;
+}
+
+.req-filtered p {
+  margin-right: 10px;
+  margin-left: 14px;
+  width: 100%;
+}
+
+.requisition-control-header-left {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.requisition-control-status-tabs {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.requisition-summary-card {
+  width: 120px;
+  min-height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.requisition-summary-card:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: #4f4e500c;
+}
+
+.requisition-summary-card span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.requisition-summary-card h2 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.requisition-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.requisition-summary-card.all {
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+.requisition-summary-card.pending {
+  border: 2px solid #555555;
+  color: #555555;
+}
+
+.requisition-summary-card.accepted {
+  border: 2px solid #4e00cc;
+  color: #4e00cc;
+}
+
+.requisition-summary-card.rejected {
+  border: 2px solid #e41717;
+  color: #e41717;
+}
+
+.req-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.req-table th,
+.req-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.req-table tr {
+  transition: all 0.2s ease;
+}
+
+.req-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.req-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.req-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.req-table th:nth-child(1),
+.req-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.req-table th:nth-child(2),
+.req-table td:nth-child(2) {
+  width: 100px;
+  text-align: left;
+}
+
+.req-table th:nth-child(3),
+.req-table td:nth-child(3) {
+  width: 400px;
+  text-align: left;
+}
+
+.req-table th:nth-child(4),
+.req-table td:nth-child(4) {
+  width: 80px;
+  text-align: center;
+}
+
+.req-table th:nth-child(5),
+.req-table td:nth-child(5) {
+  width: 80px;
+  text-align: center;
+}
+
+.req-table th:nth-child(6),
+.req-table td:nth-child(6) {
+  width: 140px;
+  text-align: center;
+}
+
+.req-table th:nth-child(7),
+.req-table td:nth-child(7) {
+  width: 300px;
+  text-align: center;
+}
+
+.req-table th:nth-child(8),
+.req-table td:nth-child(8) {
+  width: 100px;
+  text-align: center;
+}
+
+.req-table th:nth-child(9),
+.req-table td:nth-child(9) {
+  width: 300px;
+  text-align: center;
+}
+
+.status.Pending {
+  background-color: #6969691f;
+  color: gray;
+}
+
+.status.Accepted {
+  background-color: #4e00cc13;
+  color: #4e00cc;
+}
+
+.status.Rejected {
+  background-color: #cc000013;
+  color: #cc0000;
+}
+
+.date-range-type {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.employee-name {
+  font-weight: 500;
+}

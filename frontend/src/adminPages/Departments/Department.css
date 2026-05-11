@@ -1,0 +1,365 @@
+.department-container {
+  padding: 20px;
+  background-color: #f2f4f5;
+  min-height: 95vh;
+}
+
+.department-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.department-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.department-header p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.department-header .dept-count {
+  background: #8860b6;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin-left: 7px;
+  font-size: 16px;
+}
+
+.department-toolbar {
+  width: 100%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.department-search {
+  width: 100%;
+  padding: 14px 20px 14px 35px; /* left padding for icon */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease;
+}
+
+.department-search:focus {
+  outline: none;
+  border-color: #c9a0d8;
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+.add-btn {
+  padding: 14px 20px;
+  background: #7a4caf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  background: #6f42c1;
+}
+
+.add-icon {
+  margin-right: 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.department-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.department-table th,
+.department-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.department-table tr {
+  transition: all 0.2s ease;
+}
+
+.department-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.department-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.department-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.department-table th:nth-child(1),
+.department-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.department-table th:nth-child(2),
+.department-table td:nth-child(2) {
+  width: 400px;
+  text-align: left;
+}
+
+.department-table th:nth-child(3),
+.department-table td:nth-child(3) {
+  width: 90px;
+  text-align: center;
+}
+
+.department-table th:nth-child(4),
+.department-table td:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+
+.department-table th:nth-child(5),
+.department-table td:nth-child(5) {
+  width: 150px;
+  text-align: center;
+}
+
+.department-table th:nth-child(6),
+.department-table td:nth-child(6) {
+  width: 200px;
+  text-align: center;
+}
+
+.department-name:hover {
+  background-color: #d1cdcd;
+}
+
+.department-actions {
+  width: 200px;
+  text-align: left;
+  gap: 20px;
+}
+
+.department-actions button {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+}
+
+.department-action-icons {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.department-actions .edit {
+  background: #dcbce7;
+  color: #000000;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.department-actions .edit:hover {
+  background: #c9a0d8;
+}
+
+.department-actions .delete {
+  background: #ff4747;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.department-actions .delete:hover {
+  background: #e03b3b;
+}
+
+.rank-gold td:first-child {
+  color: gold;
+  font-weight: bold;
+}
+
+.rank-silver td:first-child {
+  color: silver;
+  font-weight: bold;
+}
+
+.rank-bronze td:first-child {
+  color: #cd7f32;
+  font-weight: bold;
+}
+
+.department-table tr {
+  cursor: pointer;
+}
+
+.user-division-modal {
+  background: #f3f3f3;
+  width: 1200px;
+  animation: fadeInScale 0.2s ease;
+}
+
+.user-division-header {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #777675, #8a8989);
+}
+
+.user-division-body {
+  background: #fff;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.user-division-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  width: 100%;
+  max-height: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-division-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+}
+
+.user-division-table th,
+.user-division-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+  text-align: center;
+}
+
+.user-division-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.user-division-table tr {
+  transition: all 0.2s ease;
+}
+
+.user-division-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-division-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.user-division-table th:nth-child(1),
+.user-division-table td:nth-child(1) {
+  width: 40px;
+  text-align: center;
+}
+
+.user-division-table th:nth-child(2),
+.user-division-table td:nth-child(2) {
+  width: 100px;
+  text-align: left;
+}
+
+.user-division-table th:nth-child(3),
+.user-division-table td:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+.year-range {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.year-overall {
+  padding: 9px 16px;
+  background: #5e5e5e;
+  color: #e2e2e2;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.user-division-table span {
+  font-size: 15px;
+  margin-left: 5px;
+  color: #222222;
+}
+
+.department-filter-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.excel-download-btn {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 6px;
+  background: #7a7777;
+  color: white;
+  font-size: 14px;
+  margin-left: 70px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+.excel-download-btn:hover {
+  background: #706e6e;
+}
+
+.excel-download-icon {
+  color: white;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.year-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

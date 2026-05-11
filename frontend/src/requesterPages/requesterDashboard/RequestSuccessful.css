@@ -1,0 +1,97 @@
+.request-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background: #f8fafc;
+  min-height: 100vh;
+  animation: fadeInScale 1s ease;
+}
+
+.request-success-icon {
+  font-size: 100px;
+  color: #22c55e;
+  margin-bottom: -20px;
+  display: inline-block;
+
+  /* Faster duration: 0.6s 
+     Using 'ease-out' so it starts fast and lands softly 
+  */
+  animation: coin-flip 0.6s ease-out forwards;
+
+  /* Keeps the 3D depth */
+  perspective: 1000px;
+}
+
+@keyframes coin-flip {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: rotateY(90deg) scale(1.05);
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.1);
+  }
+  75% {
+    transform: rotateY(270deg) scale(1.05);
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+.request-success-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #22c55e;
+}
+
+.request-success-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.request-success-table-wrapper {
+  width: 100%;
+  max-width: 700px;
+  overflow-x: auto;
+  margin-bottom: 25px;
+}
+
+.request-success-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.request-success-table th,
+.request-success-table td {
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.request-success-table th {
+  background: #f1f5f9;
+}
+
+.request-success-btn {
+  padding: 12px 30px;
+  background: #5c51aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.request-success-btn:hover {
+  background: #514796;
+}
+
+.request-success-btn-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}

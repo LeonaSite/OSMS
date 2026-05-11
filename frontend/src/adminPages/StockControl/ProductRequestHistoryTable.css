@@ -1,0 +1,7 @@
+.product-request-history-container {
+  margin-bottom: 100px;
+  border: 1px solid #e7e7e7;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}

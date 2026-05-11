@@ -1,0 +1,121 @@
+.request-stock-selector-modal {
+  background: #f3f3f3;
+  width: 1000px;
+  animation: fadeInScale 0.2s ease;
+}
+
+.request-stock-selector-header {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #8c5f41, #b07b54);
+}
+
+.request-stock-selector-body {
+  background: #fff;
+  padding: 20px;
+  padding-bottom: 0px;
+  min-height: 500px;
+}
+
+.request-stock-selector-tool {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.request-stock-selector-right {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.request-stock-selector-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  max-height: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.request-stock-selector-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+}
+
+.request-stock-selector-table th,
+.request-stock-selector-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.request-stock-selector-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.request-stock-selector-table tr {
+  transition: all 0.2s ease;
+}
+
+.request-stock-selector-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.request-stock-selector-table tr:hover {
+  background: #f8f2f8;
+}
+
+.enable-row {
+  cursor: pointer;
+}
+
+.disabled-row:hover {
+  background: none !important;
+}
+
+.request-stock-selector-table th.sortable:hover {
+  background: #6f6375;
+}
+
+.request-stock-selector-table th:nth-child(1),
+.request-stock-selector-table td:nth-child(1) {
+  width: 40px;
+  text-align: center;
+}
+
+.request-stock-selector-table th:nth-child(2),
+.request-stock-selector-table td:nth-child(2) {
+  width: 90px;
+  text-align: left;
+}
+
+.request-stock-selector-table th:nth-child(3),
+.request-stock-selector-table td:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+.request-stock-selector-table th:nth-child(7),
+.request-stock-selector-table td:nth-child(7) {
+  width: 50px;
+  text-align: center;
+}
+
+.disabled-row {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled-row:hover {
+  background: none !important;
+}

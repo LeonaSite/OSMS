@@ -1,0 +1,141 @@
+.requester-dashboard-container {
+  display: flex;
+  height: 100%;
+}
+
+.requester-dashboard-left-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.requester-dashboard-header {
+  padding: 0px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.requester-dashboard-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: #454546;
+}
+
+.requester-dashboard-tools {
+  display: flex;
+  align-items: center;
+}
+
+.requester-dashboard-sort {
+  font-size: 28px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #303030;
+  transition: all 0.2s ease;
+}
+
+.requester-dashboard-sort:hover {
+  color: #2f086e;
+}
+
+.requester-dashboard-search-wrapper {
+  position: relative;
+  width: 360px;
+  margin-right: 50px;
+}
+
+.requester-dashboard-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.requester-dashboard-search {
+  width: 100%;
+  padding: 12px 14px 12px 36px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.requester-dashboard-search:focus {
+  outline: none;
+  border-color: #c9a0d8;
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+.stocks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.stock-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  width: 220px;
+  max-height: 150px;
+  min-height: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: #dfdfdf 2px solid;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.stock-card.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.stock-card:hover {
+  border: #8216a3ab 2px solid;
+  box-shadow:
+    rgba(15, 0, 24, 0.096) 0px 10px 36px 0px,
+    rgba(7, 0, 17, 0.06) 0px 0px 0px 1px;
+}
+
+.stock-card.selected {
+  border: 2px solid #3b28cc; /* 🔥 same as your screenshot */
+  background: #f5f3ff; /* optional subtle highlight */
+}
+
+.stock-card h3 {
+  margin: 0 0 2px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  flex: 1;
+}
+
+.stock-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-weight: 500;
+  position: relative;
+}
+
+.pending-indication {
+  color: #7d7e7e;
+  font-size: 12px;
+  font-style: italic;
+  background-color: #7d7e7e1f;
+  padding: 5px;
+}
+
+.unit {
+  color: #64748b;
+}

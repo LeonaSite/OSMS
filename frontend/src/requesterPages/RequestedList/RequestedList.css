@@ -1,0 +1,127 @@
+.req-list-container {
+  padding: 20px 100px;
+}
+
+.req-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.req-list-title {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: #454546;
+}
+
+.req-list-header-filter {
+  display: flex;
+  gap: 30px;
+}
+
+.req-list-control-top {
+  display: flex;
+  justify-content: right;
+  margin-right: 60px;
+}
+
+/*TABLE */
+.req-list-table-wrapper {
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-top: 20px;
+}
+
+.req-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.req-list-table th,
+.req-list-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.req-list-table tr {
+  transition: all 0.2s ease;
+}
+
+.req-list-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.req-list-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.req-list-table th {
+  background: #7e7085;
+  color: #f8f2f8;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.req-list-table th:nth-child(1),
+.req-list-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.req-list-table th:nth-child(2),
+.req-list-table td:nth-child(2) {
+  width: 100px;
+  text-align: left;
+}
+
+.req-list-table th:nth-child(3),
+.req-list-table td:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+.req-list-table th:nth-child(4),
+.req-list-table td:nth-child(4) {
+  width: 130px;
+  text-align: center;
+}
+
+.req-list-table th:nth-child(5),
+.req-list-table td:nth-child(5) {
+  width: 180px;
+  text-align: center;
+}
+
+.req-list-table th:nth-child(6),
+.req-list-table td:nth-child(6) {
+  width: 80px;
+  text-align: center;
+}
+
+.req-list-table th:nth-child(7),
+.req-list-table td:nth-child(7) {
+  width: 180px;
+  text-align: center;
+}
+
+.req-list-table th:nth-child(8),
+.req-list-table td:nth-child(8) {
+  width: 300px;
+  text-align: center;
+}
+
+.req-list-table td:nth-child(8) {
+  color: #534a57;
+  font-style: italic;
+}

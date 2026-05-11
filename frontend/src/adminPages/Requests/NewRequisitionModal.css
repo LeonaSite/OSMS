@@ -1,0 +1,175 @@
+.new-req-modal {
+  background: #f3f3f3;
+  width: 1000px;
+  border-radius: 6px;
+  animation: fadeInScale 0.2s ease;
+}
+
+.new-req-modal-header {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #5b6ee1, #4c66d6);
+}
+
+.new-req-modal-body {
+  padding: 20px;
+}
+
+.new-req-modal-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.new-req-modal-inputs input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #c8b7cc;
+  font-size: 14px;
+  outline: none;
+  min-width: 300px;
+}
+
+.new-req-modal-inputs input:focus {
+  border-color: #5b6ee1;
+  background: #faf5fd;
+}
+
+.select-requester-label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.select-requester {
+  background: #fff;
+  color: #161616;
+  font-size: 12px;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #c8b7cc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.select-requester:hover {
+  background: #e2e1e1;
+}
+
+.new-requisition-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  max-height: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.new-requisition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+}
+
+.new-requisition-table th,
+.new-requisition-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.new-requisition-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.new-requisition-table tr {
+  transition: all 0.2s ease;
+}
+
+.new-requisition-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.new-requisition-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.new-requisition-table th.sortable:hover {
+  background: #6f6375;
+}
+
+.new-requisition-table th:nth-child(1),
+.new-requisition-table td:nth-child(1) {
+  width: 90px;
+  text-align: left;
+}
+
+.new-requisition-table th:nth-child(2),
+.new-requisition-table td:nth-child(2) {
+  width: 350px;
+}
+
+.new-requisition-table th:nth-child(3),
+.new-requisition-table td:nth-child(3) {
+  width: 200px;
+  text-align: center;
+}
+
+.new-requisition-table th:nth-child(4),
+.new-requisition-table td:nth-child(4) {
+  width: 200px;
+  text-align: center;
+}
+
+.new-requisition-table th:nth-child(5),
+.new-requisition-table td:nth-child(5) {
+  width: 70px;
+  text-align: center;
+}
+
+.add-new-requisition {
+  width: 100%;
+  background: #fefbfe;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-new-requisition-btn {
+  padding: 10px 24px;
+  background: none;
+  color: #7a4caf;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-new-requisition:hover {
+  background: #eeecee;
+}
+
+.new-req-delete {
+  background-color: #c14242;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+.new-req-delete:hover {
+  background-color: #aa3a3a;
+}

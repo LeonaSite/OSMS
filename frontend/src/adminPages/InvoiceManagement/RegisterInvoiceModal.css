@@ -1,0 +1,157 @@
+/*Modal Body*/
+.register-invoice-modal {
+  width: 950px;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.2s ease;
+}
+
+.register-invoice-modal-header {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #5b6ee1, #4c66d6);
+}
+
+.register-invoice-modal-body {
+  padding: 20px 30px;
+  background: #f3f3f3;
+  min-height: 200px;
+}
+
+.register-invoice-table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  max-height: 400px;
+}
+
+/*Input*/
+.register-invoice-modal-input {
+  width: 97%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #c8b7cc;
+  background: #ffffff;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.register-invoice-modal-input:focus {
+  border-color: #5b6ee1;
+  background: #faf5fd;
+}
+
+/* Table */
+.register-invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-invoice-table th,
+.register-invoice-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.register-invoice-table tr {
+  transition: all 0.2s ease;
+}
+
+.register-invoice-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.register-invoice-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.register-invoice-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.register-invoice-table th:nth-child(1),
+.register-invoice-table td:nth-child(1) {
+  width: 80px;
+}
+
+.register-invoice-table th:nth-child(2),
+.register-invoice-table td:nth-child(2) {
+  width: 300px;
+  text-align: left;
+}
+
+.register-invoice-table th:nth-child(3),
+.register-invoice-table td:nth-child(3) {
+  width: 50px;
+}
+
+.register-invoice-table th:nth-child(4),
+.register-invoice-table td:nth-child(4) {
+  width: 100px;
+  text-align: center;
+}
+
+.register-invoice-table th:nth-child(5),
+.register-invoice-table td:nth-child(5) {
+  width: 50px;
+}
+
+.select-item-name {
+  font-weight: 600;
+}
+
+.select-item-desc {
+  font-size: 14px;
+  color: #777;
+}
+
+.register-invoice-delete-row {
+  padding: 5px 8px;
+  background: #af4c4c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.register-invoice-delete-row:hover {
+  background: #974343;
+}
+
+.add-register-invoice {
+  width: 100%;
+  background: #fdfafd;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-register-invoice-btn {
+  padding: 10px 24px;
+  background: none;
+  color: #7a4caf;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-register-invoice:hover {
+  background: #eeecee;
+}

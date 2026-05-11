@@ -1,0 +1,140 @@
+.annual-budget {
+  padding: 10px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.budget-header {
+  background: #24337d;
+  background: linear-gradient(
+    180deg,
+    rgba(36, 51, 125, 1) 44%,
+    rgba(87, 77, 130, 1) 95%
+  );
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.budget-year-filter {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 10px;
+}
+
+.budget-header h1 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #e3d7ff;
+}
+
+.budget-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.budget-amount h2 {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.remaining {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.year-input {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+}
+
+.budget-toolbar {
+  margin: 20px 0px;
+}
+
+.edit-budget-btn {
+  padding: 14px 25px;
+  background: none;
+  color: white;
+  border: white 1px solid;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  transition: all 0.2s ease;
+}
+
+.edit-budget-btn:hover {
+  background-color: #f9f9f917;
+}
+
+/* TABLE */
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.budget-table th,
+.budget-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  border-left: none;
+  padding: 18px 15px;
+}
+
+.budget-table tr {
+  transition: all 0.2s ease;
+}
+
+.budget-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.budget-table tr:hover {
+  background: #f8f2f8;
+  cursor: pointer;
+}
+
+.budget-table th {
+  background: #7e7085;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.budget-table th:nth-child(1),
+.budget-table td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.budget-table th:nth-child(2),
+.budget-table td:nth-child(2) {
+  width: 400px;
+  text-align: left;
+}
+
+.budget-table th:nth-child(3),
+.budget-table td:nth-child(3) {
+  text-align: center;
+}
+
+.budget-table th:nth-child(4),
+.budget-table td:nth-child(4) {
+  text-align: center;
+}

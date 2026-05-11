@@ -1,0 +1,129 @@
+/* Background */
+.admin-login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #435999;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.021), rgba(0, 0, 0, 0.068)),
+    url("/src/assets/admin-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5f6986;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.021), rgba(0, 0, 0, 0.068)),
+    url("/src/assets/req-bg.png ");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.95;
+  transition: all 0.2s ease;
+}
+
+/* Card */
+.login-card {
+  width: 360px;
+  padding: 40px 30px;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 6px;
+  text-align: center;
+  animation: fadeInScale 0.5s ease;
+
+  background-color: #ffffff8e; /* Semi-transparent */
+  backdrop-filter: blur(10px); /* The blur effect */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.login-logo {
+  width: 90px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Title */
+.login-card h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Input Group */
+.input-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.input-group input {
+  width: 94%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #b8a9c9;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 2px rgba(201, 160, 216, 0.2);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(to right, #4e73df, #224abe);
+  border: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Password label row */
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Show / Hide button */
+.toggle-password {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+  user-select: none;
+}
+
+.toggle-password:hover {
+  color: #6f42c1;
+}
