@@ -7,7 +7,7 @@ const fetchAuditLogs = async ({ queryKey }) => {
   const [_key, params] = queryKey;
 
   const res = await axios.get(`${API}/api/audit-logs`, {
-    params
+    params,
   });
 
   return res.data;
@@ -20,9 +20,8 @@ export const useAuditLogs = (params) => {
 
     keepPreviousData: true,
 
-    // 🔥 REAL-TIME (same as invoices)
-    refetchInterval: 3000,        
-    refetchOnWindowFocus: true,   
-    staleTime: 0,                 
+    refetchInterval: 3000,
+    refetchOnWindowFocus: true,
+    staleTime: 0,
   });
 };
