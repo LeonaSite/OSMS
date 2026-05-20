@@ -1,3 +1,4 @@
+/* CONTAINER & HEADER */
 .req-list-container {
   padding: 20px 100px;
 }
@@ -5,7 +6,9 @@
 .req-list-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .req-list-title {
@@ -14,25 +17,70 @@
   display: flex;
   align-items: center;
   color: #454546;
+  margin: 0;
 }
 
 .req-list-header-filter {
   display: flex;
   gap: 30px;
+  align-items: center;
+}
+
+.requisition-control-status-tabs {
+  display: flex;
+  gap: 15px;
+}
+
+.requisition-summary-card {
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #e7e7e7;
+  /* Add your specific status colors (e.g. .pending, .accepted) here if not already defined */
+}
+
+/* DATE FILTER SECTION */
+.date-filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mobile-date-toggle {
+  display: none; /* Hidden on desktop */
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.date-inputs-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.date-input-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .req-list-control-top {
   display: flex;
   justify-content: right;
-  margin-right: 60px;
+  margin-top: 20px;
 }
 
-/*TABLE */
+/* TABLE */
 .req-list-table-wrapper {
   border: 1px solid #e7e7e7;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: white;
   margin-top: 20px;
+  overflow-x: auto; /* Fallback for safe scrolling */
 }
 
 .req-list-table {
@@ -40,13 +88,11 @@
   border-collapse: collapse;
   margin: auto;
   background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .req-list-table th,
 .req-list-table td {
   border: 1px solid #ddd;
-  padding: 10px;
   border-right: none;
   border-left: none;
   padding: 18px 15px;
@@ -70,58 +116,210 @@
   color: #f8f2f8;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.req-list-table th:nth-child(1),
-.req-list-table td:nth-child(1) {
-  width: 50px;
-  text-align: center;
-}
-
-.req-list-table th:nth-child(2),
-.req-list-table td:nth-child(2) {
-  width: 100px;
   text-align: left;
-}
-
-.req-list-table th:nth-child(3),
-.req-list-table td:nth-child(3) {
-  width: 300px;
-  text-align: left;
-}
-
-.req-list-table th:nth-child(4),
-.req-list-table td:nth-child(4) {
-  width: 130px;
-  text-align: center;
-}
-
-.req-list-table th:nth-child(5),
-.req-list-table td:nth-child(5) {
-  width: 180px;
-  text-align: center;
-}
-
-.req-list-table th:nth-child(6),
-.req-list-table td:nth-child(6) {
-  width: 80px;
-  text-align: center;
-}
-
-.req-list-table th:nth-child(7),
-.req-list-table td:nth-child(7) {
-  width: 180px;
-  text-align: center;
-}
-
-.req-list-table th:nth-child(8),
-.req-list-table td:nth-child(8) {
-  width: 300px;
-  text-align: center;
 }
 
 .req-list-table td:nth-child(8) {
   color: #534a57;
   font-style: italic;
+}
+
+/* ========================================= */
+/*          MOBILE RESPONSIVE STYLES         */
+/* ========================================= */
+@media (max-width: 900px) {
+  .req-list-container {
+    padding: 15px;
+  }
+
+  .req-list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .req-list-header-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+
+  /* STATUS CARDS: All 4 on the same row */
+  .requisition-control-status-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .requisition-summary-card {
+    flex: 1;
+    padding: 5px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .requisition-summary-card span {
+    font-size: 11px;
+    word-break: break-word;
+  }
+
+  .requisition-summary-card h2 {
+    font-size: 16px;
+    margin: 4px 0 0;
+  }
+
+  /* DATE FILTER MOBILE */
+  .date-filter-section {
+    width: 100%;
+    align-items: stretch;
+    margin-top: 10px;
+  }
+
+  .mobile-date-toggle {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .date-range {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: stretch;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    gap: 15px;
+  }
+
+  .date-range.show {
+    display: flex;
+  }
+
+  /* From and To on the same row */
+  .date-inputs-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .date-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+  }
+
+  .date-input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .date-range-type,
+  .clear-date-btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .req-list-control-top {
+    justify-content: center;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .stock-search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* FLEXBOX TABLE CONVERSION */
+  .req-list-table,
+  .req-list-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .req-list-table thead {
+    display: none; /* Hide standard headers */
+  }
+
+  .req-list-table tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    padding: 5px 10px;
+  }
+
+  .req-list-table tr:hover {
+    background: #fff;
+  }
+
+  .req-list-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .req-list-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Render the Data Labels as headers inside the row */
+  .req-list-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #7e7085;
+    text-align: left;
+    flex: 1;
+    padding-right: 15px;
+  }
+
+  .req-list-table td > * {
+    flex: 2;
+    text-align: right;
+  }
+
+  .item-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+}
+
+/* Force date range visible on desktop regardless of state */
+@media (min-width: 901px) {
+  .date-range {
+    display: flex !important;
+  }
 }

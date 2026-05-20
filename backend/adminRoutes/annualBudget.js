@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../db");
 
+const verifyToken = require("../middleware/auth");
+const { decrypt } = require("../encryption/crypto");
+const { logAudit } = require("../utils/auditLogger");
+
 // ✅ GET all departments
 router.get("/departments", async (req, res) => {
   try {
@@ -70,7 +74,7 @@ router.get("/all", async (req, res) => {
 });
 
 // ✅ CREATE
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
   const { year, amount, allocations, departments } = req.body;
 
   const conn = await pool.getConnection();
@@ -156,6 +160,43 @@ router.post("/", async (req, res) => {
       }
     }
 
+    // ✅ GET ADMIN INFO
+    const adminID = req.user.userId;
+
+    const [adminRows] = await pool.query(
+      `
+      SELECT
+        Firstname,
+        Lastname
+      FROM Admin
+      WHERE AdminID = ?
+    `,
+      [adminID],
+    );
+
+    let adminName = "Unknown Admin";
+
+    if (adminRows.length > 0) {
+      adminName = `${decrypt(adminRows[0].Firstname)} ${decrypt(
+        adminRows[0].Lastname,
+      )}`;
+    }
+
+    // ✅ AUDIT DETAILS
+    const allocationDetails = Object.entries(allocations)
+      .map(
+        ([deptId, value]) =>
+          `Department ${deptId}: ₱${Number(value).toLocaleString()}`,
+      )
+      .join(", ");
+
+    await logAudit({
+      location: "Annual Budget",
+      action: "Create Annual Budget",
+      adminID,
+      details: `${adminName} created annual budget for year ${year} with total amount ₱${Number(amount).toLocaleString()}. Allocations: ${allocationDetails}.`,
+    });
+
     await conn.commit();
 
     res.json({ message: "Budget created successfully" });
@@ -173,7 +214,7 @@ router.post("/", async (req, res) => {
 });
 
 // ✅ UPDATE
-router.put("/:year", async (req, res) => {
+router.put("/:year", verifyToken, async (req, res) => {
   const { amount, allocations, departments } = req.body;
   const year = req.params.year;
 
@@ -231,6 +272,43 @@ router.put("/:year", async (req, res) => {
         );
       }
     }
+
+    // ✅ GET ADMIN INFO
+    const adminID = req.user.userId;
+
+    const [adminRows] = await pool.query(
+      `
+      SELECT
+        Firstname,
+        Lastname
+      FROM Admin
+      WHERE AdminID = ?
+    `,
+      [adminID],
+    );
+
+    let adminName = "Unknown Admin";
+
+    if (adminRows.length > 0) {
+      adminName = `${decrypt(adminRows[0].Firstname)} ${decrypt(
+        adminRows[0].Lastname,
+      )}`;
+    }
+
+    // ✅ AUDIT DETAILS
+    const allocationDetails = Object.entries(allocations)
+      .map(
+        ([deptId, value]) =>
+          `Department ${deptId}: ₱${Number(value).toLocaleString()}`,
+      )
+      .join(", ");
+
+    await logAudit({
+      location: "Annual Budget",
+      action: "Update Annual Budget",
+      adminID,
+      details: `${adminName} updated annual budget for year ${year} to total amount ₱${Number(amount).toLocaleString()}. Allocations: ${allocationDetails}.`,
+    });
 
     await conn.commit();
 

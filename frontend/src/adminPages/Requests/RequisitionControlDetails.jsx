@@ -45,9 +45,12 @@ export default function RequisitionControlDetails() {
     0,
   );
 
+  /* === CREDITS DISABLE ===
   const remainingCredit = Number(request?.RemainingCredit || 0);
-
   const isOverCredit = totalRequestAmount > remainingCredit;
+  */
+  // Temporary fallback so checks don't break
+  const isOverCredit = false;
 
   const isPending = request?.StatusName === "Pending";
 
@@ -66,11 +69,14 @@ export default function RequisitionControlDetails() {
   useEffect(() => {
     if (!request) return;
 
+    /* === CREDITS DISABLE ===
     if (isOverCredit) {
       setRejectRemarks("Request exceeds available credit.");
     } else {
       setRejectRemarks("Requested Item Out of Stock.");
     }
+    */
+    setRejectRemarks("Requested Item Out of Stock.");
   }, [request, isOverCredit]);
 
   const openInvoiceModal = (item) => {
@@ -220,6 +226,7 @@ export default function RequisitionControlDetails() {
   });
 
   const handleOpenAccept = async () => {
+    /* === CREDITS DISABLE ===
     if (isOverCredit) {
       Swal.fire(
         "Insufficient Credit",
@@ -228,6 +235,7 @@ export default function RequisitionControlDetails() {
       );
       return;
     }
+    */
 
     if (isInvalidInvoice) {
       Swal.fire("Invalid", "Fix invoice quantities first", "warning");
@@ -271,11 +279,14 @@ export default function RequisitionControlDetails() {
   const handleOpenReject = () => {
     if (!isPending) return;
 
+    /* === CREDITS DISABLE ===
     if (isOverCredit) {
       setRejectRemarks("Request exceeds available credit.");
     } else {
       setRejectRemarks("Requested Item Out of Stock.");
     }
+    */
+    setRejectRemarks("Requested Item Out of Stock.");
 
     setShowRejectModal(true);
   };
@@ -639,7 +650,8 @@ export default function RequisitionControlDetails() {
             <p>{request.DepartmentName}</p>
           </div>
 
-          <div className="info-block">
+          {/* === CREDITS DISABLE  === */}
+          {/* <div className="info-block">
             <label>Remaining Credit</label>
 
             <p>
@@ -653,7 +665,7 @@ export default function RequisitionControlDetails() {
             <p style={{ fontSize: "12px", color: "#888" }}>
               Budget Year: {request.CreditYear || "N/A"}
             </p>
-          </div>
+          </div> */}
 
           <div className="info-block">
             <label>Request Purpose</label>
@@ -668,7 +680,8 @@ export default function RequisitionControlDetails() {
                   <button
                     className="accept-btn"
                     onClick={handleOpenAccept}
-                    disabled={isIncomplete || isInvalidInvoice || isOverCredit}
+                    /* Credits condition omitted from disabled state */
+                    disabled={isIncomplete || isInvalidInvoice}
                   >
                     Accept
                   </button>

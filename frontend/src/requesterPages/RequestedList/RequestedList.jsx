@@ -23,6 +23,8 @@ export default function RequestedList() {
   const [dateType, setDateType] = useState("RequestedAt");
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
+  // State to toggle date filters on mobile
+  const [showDateFilters, setShowDateFilters] = useState(false);
 
   const items = data || [];
 
@@ -57,7 +59,6 @@ export default function RequestedList() {
         if (!rawDate) return false;
 
         const rowDate = new Date(rawDate);
-
         let valid = true;
 
         if (dateFrom) valid = valid && rowDate >= new Date(dateFrom);
@@ -106,12 +107,10 @@ export default function RequestedList() {
   // SORT
   const handleSort = (key) => {
     let direction = "asc";
-
     if (sortConfig.key === key) {
       if (sortConfig.direction === "asc") direction = "desc";
       else if (sortConfig.direction === "desc") direction = null;
     }
-
     setSortConfig({
       key: direction ? key : null,
       direction,
@@ -167,33 +166,49 @@ export default function RequestedList() {
           </div>
         </div>
 
-        <div className="date-range">
-          <select
-            className="date-range-type"
-            value={dateType}
-            onChange={(e) => setDateType(e.target.value)}
+        {/* DATE FILTERS */}
+        <div className="date-filter-section">
+          <button
+            className="mobile-date-toggle"
+            onClick={() => setShowDateFilters(!showDateFilters)}
           >
-            <option value="RequestedAt">Request Date</option>
-            <option value="ProcessedAt">Processed Date</option>
-          </select>
-
-          <span>From</span>
-          <input
-            type="date"
-            value={dateFrom}
-            onChange={(e) => setDateFrom(e.target.value)}
-          />
-
-          <span>To</span>
-          <input
-            type="date"
-            value={dateTo}
-            onChange={(e) => setDateTo(e.target.value)}
-          />
-
-          <button className="clear-date-btn" onClick={resetDateRange}>
-            Clear
+            {showDateFilters ? "Hide Date Filters" : "Filter by Date"}
           </button>
+
+          <div className={`date-range ${showDateFilters ? "show" : ""}`}>
+            <select
+              className="date-range-type"
+              value={dateType}
+              onChange={(e) => setDateType(e.target.value)}
+            >
+              <option value="RequestedAt">Request Date</option>
+              <option value="ProcessedAt">Processed Date</option>
+            </select>
+
+            <div className="date-inputs-row">
+              <div className="date-input-group">
+                <span>From</span>
+                <input
+                  type="date"
+                  value={dateFrom}
+                  onChange={(e) => setDateFrom(e.target.value)}
+                />
+              </div>
+
+              <div className="date-input-group">
+                <span>To</span>
+                <input
+                  type="date"
+                  value={dateTo}
+                  onChange={(e) => setDateTo(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <button className="clear-date-btn" onClick={resetDateRange}>
+              Clear
+            </button>
+          </div>
         </div>
       </div>
 
@@ -246,28 +261,29 @@ export default function RequestedList() {
           <tbody>
             {paginated.map((item, index) => (
               <tr key={item.RequestDetailsID}>
-                <td>{(currentPage - 1) * rowsPerPage + index + 1}</td>
-                <td>{item.RequisitionNo}</td>
-
-                <td>
-                  <div className="select-item-name">{item.StockName}</div>
-                  <div className="select-item-desc">{item.Description}</div>
+                <td data-label="#">
+                  {(currentPage - 1) * rowsPerPage + index + 1}
                 </td>
-
-                <td>{item.Quantity}</td>
-                <td>{formatDateTime(item.RequestedAt)}</td>
-
-                <td>
+                <td data-label="Req No.">{item.RequisitionNo}</td>
+                <td data-label="Item">
+                  <div className="item-details-wrapper">
+                    <div className="select-item-name">{item.StockName}</div>
+                    <div className="select-item-desc">{item.Description}</div>
+                  </div>
+                </td>
+                <td data-label="Quantity">{item.Quantity}</td>
+                <td data-label="Requested At">
+                  {formatDateTime(item.RequestedAt)}
+                </td>
+                <td data-label="Status">
                   <span className={`status ${item.StatusName}`}>
                     {item.StatusName}
                   </span>
                 </td>
-
-                <td>
+                <td data-label="Processed At">
                   {item.ProcessedAt ? formatDateTime(item.ProcessedAt) : "-"}
                 </td>
-
-                <td>{item.Remarks || "-"}</td>
+                <td data-label="Remarks">{item.Remarks || "-"}</td>
               </tr>
             ))}
           </tbody>
