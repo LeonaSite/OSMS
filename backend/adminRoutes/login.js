@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/auth");
 const { encrypt, decrypt } = require("../encryption/crypto");
-const pool = require("../db"); // ✅ use MySQL pool
+const pool = require("../db");
 
 // POST /api/login
 router.post("/", async (req, res) => {
