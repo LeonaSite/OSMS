@@ -109,11 +109,11 @@ export default function Navigation() {
 
           <div className="nav-divider" />
           <p className="nav-divider-title">Operations</p>
-
+          {/* CREDITS DISABLE 
           <NavLink to="/admin/annual-budget" className="nav-item">
             <PiMoney className="nav-icons" /> Budget Ceiling
           </NavLink>
-
+          */}
           <NavLink to="/admin/stock-control" className="nav-item" title="Add, ">
             <BiCabinet className="nav-icons" /> Stock Control
           </NavLink>

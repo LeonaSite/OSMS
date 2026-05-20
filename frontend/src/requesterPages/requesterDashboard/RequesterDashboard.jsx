@@ -69,20 +69,26 @@ export default function RequesterDashboard() {
 
   const MAX_SELECTION = 10;
 
-  const baseCredit = stocks[0]?.RemainingCredit || 0;
+  /* -------------------------------------------------------------
+     CREDITS DISABLE
+     Force values or bypass check flags so users aren't locked out.
+  ------------------------------------------------------------- */
+  // const baseCredit = stocks[0]?.RemainingCredit || 0;
 
-  const totalSelectedCost = useMemo(() => {
-    return selectedItems.reduce(
-      (sum, item) => sum + item.Price * item.quantity,
-      0,
-    );
-  }, [selectedItems]);
+  // const totalSelectedCost = useMemo(() => {
+  //   return selectedItems.reduce(
+  //     (sum, item) => sum + item.Price * item.quantity,
+  //     0,
+  //   );
+  // }, [selectedItems]);
 
-  const remainingAfterSelection = baseCredit - totalSelectedCost;
+  // const remainingAfterSelection = baseCredit - totalSelectedCost;
 
+  // Modified to safely allow any item pricing threshold
   const exceedsCredit = (item) => {
-    if (!baseCredit) return true;
-    return item.Price > remainingAfterSelection;
+    // if (!baseCredit) return true;
+    // return item.Price > remainingAfterSelection;
+    return false;
   };
 
   const handleSelectItem = (item) => {
@@ -98,9 +104,10 @@ export default function RequesterDashboard() {
         return prev;
       }
 
-      if (item.Price > remainingAfterSelection) {
-        return prev;
-      }
+      // CREDITS DISABLE
+      // if (item.Price > remainingAfterSelection) {
+      //   return prev;
+      // }
 
       return [
         ...prev,
@@ -184,11 +191,16 @@ export default function RequesterDashboard() {
                   <p className="desc">{item.Description}</p>
 
                   <div className="stock-footer">
-                    {exceedsCredit(item) && (
+                    {/* -------------------------------------------------------------
+                       CREDITS DISABLE
+                       UI WARNING 
+                       Hiding the indicator warning message block from cards.
+                    ------------------------------------------------------------- */}
+                    {/* {exceedsCredit(item) && (
                       <span className="pending-indication">
                         exceeds remaining credit
                       </span>
-                    )}
+                    )} */}
 
                     {item.HasPendingRequest === 1 ? (
                       <span className="pending-indication">

@@ -183,9 +183,12 @@ router.post("/send-request", verifyRequester, async (req, res) => {
       totalCost += stock.Price * item.quantity;
     }
 
-    if (totalCost > remainingCredit) {
-      return res.status(400).send("Request exceeds department credit");
-    }
+    /* -------------------------------------------------------------
+       CREDITS DISABLE: COMMENTED OUT CREDIT CHECK LIMITATION
+    ------------------------------------------------------------- */
+    // if (totalCost > remainingCredit) {
+    //   return res.status(400).send("Request exceeds department credit");
+    // }
 
     //  GENERATE UNIQUE REQUISITION NO
     let requisitionNo;
@@ -229,16 +232,18 @@ router.post("/send-request", verifyRequester, async (req, res) => {
       );
     }
 
-    //  DEDUCT CREDIT
-    await conn.query(
-      `
-      UPDATE DepartmentCredits
-      SET RemainingCredit = RemainingCredit - ?
-      WHERE DepartmentID = ?
-      AND FiscalYear = ?
-      `,
-      [totalCost, departmentID, creditYear],
-    );
+    /* -------------------------------------------------------------
+       CREDITS DISABLE: COMMENTED OUT CREDIT DEDUCTION
+    ------------------------------------------------------------- */
+    // await conn.query(
+    //   `
+    //   UPDATE DepartmentCredits
+    //   SET RemainingCredit = RemainingCredit - ?
+    //   WHERE DepartmentID = ?
+    //   AND FiscalYear = ?
+    //   `,
+    //   [totalCost, departmentID, creditYear],
+    // );
 
     await conn.commit();
 

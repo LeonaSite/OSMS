@@ -1428,67 +1428,72 @@ router.put("/accept/:requestID", verifyToken, async (req, res) => {
       return res.status(400).send("Already accepted");
     }
 
-    const [reqRows] = await connection.query(
-      `
-      SELECT DepartmentID
-      FROM Request
-      WHERE RequestID = ?
-      `,
-      [requestID],
-    );
+    /* 
+    -------------------------------------------------------------
+       CREDITS DISABLE: DEPARTMENT FETCH
+       Commented out since departmentID is only used for credit validation.
+    ------------------------------------------------------------- */
+    // const [reqRows] = await connection.query(
+    //   `
+    //   SELECT DepartmentID
+    //   FROM Request
+    //   WHERE RequestID = ?
+    //   `,
+    //   [requestID],
+    // );
+    // const departmentID = reqRows[0].DepartmentID;
 
-    const departmentID = reqRows[0].DepartmentID;
+    /* -------------------------------------------------------------
+       CREDITS DISABLE: TOTAL COST CALCULATION
+       Bypassing the cost calculation used for balance checking.
+    ------------------------------------------------------------- */
+    // const [amountRows] = await connection.query(
+    //   `
+    //   SELECT SUM(RD.Quantity * S.Price) AS TotalAmount
+    //   FROM RequestDetails RD
+    //   JOIN Stocks S ON RD.StockID = S.StockID
+    //   WHERE RD.RequestID = ?
+    //   `,
+    //   [requestID],
+    // );
+    // const totalAmount = Number(amountRows[0].TotalAmount || 0);
+    // if (totalAmount <= 0) {
+    //   await connection.rollback();
+    //   return res.status(400).send("Invalid total amount");
+    // }
 
-    const [amountRows] = await connection.query(
-      `
-      SELECT SUM(RD.Quantity * S.Price) AS TotalAmount
-      FROM RequestDetails RD
-      JOIN Stocks S ON RD.StockID = S.StockID
-      WHERE RD.RequestID = ?
-      `,
-      [requestID],
-    );
-
-    const totalAmount = Number(amountRows[0].TotalAmount || 0);
-
-    if (totalAmount <= 0) {
-      await connection.rollback();
-      return res.status(400).send("Invalid total amount");
-    }
-
-    const currentYear = new Date().getFullYear();
-
-    const [yearRows] = await connection.query(
-      `
-      SELECT FiscalYear, RemainingCredit
-      FROM DepartmentCredits
-      WHERE DepartmentID = ?
-        AND FiscalYear <= ?
-      ORDER BY FiscalYear DESC
-      LIMIT 1
-      `,
-      [departmentID, currentYear],
-    );
-
-    if (!yearRows.length) {
-      await connection.rollback();
-      return res.status(400).send("No budget found for department");
-    }
-
-    const useYear = yearRows[0].FiscalYear;
-    const remainingCredit = Number(yearRows[0].RemainingCredit || 0);
-
-    if (remainingCredit <= 0) {
-      await connection.rollback();
-      return res.status(400).send("No remaining budget");
-    }
-
-    if (remainingCredit < totalAmount) {
-      await connection.rollback();
-      return res
-        .status(400)
-        .send(`Insufficient budget. Remaining: ${remainingCredit}`);
-    }
+    /* -------------------------------------------------------------
+       CREDITS DISABLE: BUDGET CHECKS & GUARDS
+       Preventing the system from blocking approvals due to zero/low credits.
+    ------------------------------------------------------------- */
+    // const currentYear = new Date().getFullYear();
+    // const [yearRows] = await connection.query(
+    //   `
+    //   SELECT FiscalYear, RemainingCredit
+    //   FROM DepartmentCredits
+    //   WHERE DepartmentID = ?
+    //     AND FiscalYear <= ?
+    //   ORDER BY FiscalYear DESC
+    //   LIMIT 1
+    //   `,
+    //   [departmentID, currentYear],
+    // );
+    // if (!yearRows.length) {
+    //   await connection.rollback();
+    //   return res.status(400).send("No budget found for department");
+    // }
+    // const useYear = yearRows[0].FiscalYear;
+    // const remainingCredit = Number(yearRows[0].RemainingCredit || 0);
+    // if (remainingCredit <= 0) {
+    //   await connection.rollback();
+    //   return res.status(400).send("No remaining budget");
+    // }
+    // if (remainingCredit < totalAmount) {
+    //   await connection.rollback();
+    //   return res
+    //     .status(400)
+    //     .send(`Insufficient budget. Remaining: ${remainingCredit}`);
+    // }
 
     // VALIDATION
     const [itemRows] = await connection.query(
@@ -1570,16 +1575,21 @@ router.put("/accept/:requestID", verifyToken, async (req, res) => {
       }
     }
 
-    // DEDUCT BUDGET
-    await connection.query(
-      `
-      UPDATE DepartmentCredits
-      SET RemainingCredit = RemainingCredit - ?
-      WHERE DepartmentID = ?
-        AND FiscalYear = ?
-      `,
-      [totalAmount, departmentID, useYear],
-    );
+    /*    
+    -------------------------------------------------------------
+       CREDITS DISABLE: DEDUCT BUDGET
+       Bypassing actual financial database ledger updates.
+    ------------------------------------------------------------- */
+    // // DEDUCT BUDGET
+    // await connection.query(
+    //   `
+    //   UPDATE DepartmentCredits
+    //   SET RemainingCredit = RemainingCredit - ?
+    //   WHERE DepartmentID = ?
+    //     AND FiscalYear = ?
+    //   `,
+    //   [totalAmount, departmentID, useYear],
+    // );
 
     // UPDATE REQUEST
     await connection.query(
@@ -1600,9 +1610,7 @@ router.put("/accept/:requestID", verifyToken, async (req, res) => {
     res.send("Request accepted successfully");
   } catch (err) {
     console.error(err);
-
     await connection.rollback();
-
     res.status(500).send(err.message || "Failed to accept request");
   } finally {
     connection.release();
