@@ -127,7 +127,7 @@ export default function RequesterDashboard() {
     <div className="requester-dashboard-container">
       <div className="requester-dashboard-left-content">
         <div className="requester-dashboard-header">
-          <h2>Available Products</h2>
+          <h2 className="desktop-only-title">Available Products</h2>
 
           <div className="requester-dashboard-tools">
             {sortConfig.direction === "asc" ? (

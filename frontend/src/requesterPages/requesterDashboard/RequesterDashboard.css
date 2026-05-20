@@ -58,6 +58,7 @@
   padding: 12px 14px 12px 36px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .requester-dashboard-search:focus {
@@ -81,6 +82,7 @@
   width: 220px;
   max-height: 150px;
   min-height: 150px;
+  box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -104,8 +106,8 @@
 }
 
 .stock-card.selected {
-  border: 2px solid #3b28cc; /* 🔥 same as your screenshot */
-  background: #f5f3ff; /* optional subtle highlight */
+  border: 2px solid #3b28cc;
+  background: #f5f3ff;
 }
 
 .stock-card h3 {
@@ -138,4 +140,58 @@
 
 .unit {
   color: #64748b;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .requester-dashboard-header h2 {
+    display: none;
+  }
+  .requester-dashboard-container {
+    flex-direction: column;
+  }
+
+  .requester-dashboard-left-content {
+    padding: 10px;
+  }
+
+  .desktop-only-title {
+    display: none;
+  }
+
+  .requester-dashboard-header {
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .requester-dashboard-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .requester-dashboard-search-wrapper {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* Exactly 2 Columns on Mobile */
+  .stocks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stock-card {
+    width: 100%;
+    min-height: 160px; /* Slight height increase for wrapping text */
+    padding: 12px;
+  }
+
+  .stock-card h3 {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
 }

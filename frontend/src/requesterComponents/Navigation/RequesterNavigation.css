@@ -4,20 +4,18 @@
   min-height: 100vh;
 }
 
-/*  NAVBAR */
+/* NAVBAR */
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #1e293b;
   background: linear-gradient(269deg, #1e293b 56%, #273c52 95%);
-  padding: 18px 100px;
+  padding: 18px 4%; /* Flexible relative padding instead of fixed 100px */
   border-bottom: 1px solid #e7e7e7;
-
   position: sticky;
   top: 0;
   z-index: 1000;
-
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -38,34 +36,38 @@
 .nav-left h2 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin: 0; /* Cleaned up margin conflict */
   color: #fefdff;
   letter-spacing: 2px;
 }
-/*  LINKS */
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
 
+/* LINKS & NAVIGATION CONTAINER */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
 .top-nav-icon {
-  margin-right: 5px;
+  margin-right: 8px;
   font-size: 20px;
-  margin-bottom: -5px;
+  vertical-align: middle;
 }
 
 .nav-links a {
   color: #cbd5f5;
   text-decoration: none;
   font-weight: 500;
-  margin-right: 20px;
+  padding: 8px 16px;
   letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
 }
 
 .nav-links a.active {
@@ -73,12 +75,7 @@
   border-bottom: 2px solid #38bdf8;
 }
 
-/*  CONTENT */
-.page-content {
-  background: #f1f5f9;
-  flex: 1;
-}
-
+/* USER PROFILE SECTION */
 .user-section {
   position: relative;
   cursor: pointer;
@@ -88,8 +85,6 @@
   gap: 8px;
   font-weight: 500;
   padding: 5px 10px;
-  border-bottom: 2px solid #365f8a00;
-  margin-left: 20px;
 }
 
 .user-section:hover {
@@ -98,40 +93,47 @@
 
 .user-icon {
   font-size: 40px;
+  flex-shrink: 0;
+}
+
+.nav-user-warpper {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-username {
-  font-size: 16px;
-  margin: 0px;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .nav-division {
-  font-size: 12px;
-  margin: 0px;
+  font-size: 11px;
+  margin: 0;
   font-weight: 400;
+  opacity: 0.8;
 }
 
 .user-tooltip {
   position: absolute;
-  top: 45px;
+  top: 55px;
   right: 0;
   background: #1f2f41;
   color: #eeeeee;
   padding: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   width: 220px;
   box-shadow:
     rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  z-index: 999;
+  z-index: 1010;
 }
 
 .user-tooltip p {
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 10px;
 }
 
 .user-tooltip strong {
@@ -147,8 +149,90 @@
   color: white;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .user-tooltip button:hover {
   background: #b63838;
+}
+
+/* HAMBURGER TRIGGER BUTTON */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fefdff;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1005;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT CONTAINER */
+.page-content {
+  background: #f1f5f9;
+  flex: 1;
+}
+
+/* RESPONSIVE LAYOUT (MOBILE INFLECTION) */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #1e293b;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 24px 40px 24px;
+    gap: 35px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1001;
+  }
+
+  .nav-right.open {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .nav-links a.active {
+    border-bottom: none;
+    border-left: 4px solid #38bdf8;
+    padding-left: 12px;
+  }
+
+  .user-section {
+    margin-left: 0;
+    padding: 15px 0;
+    width: 100%;
+    border-top: 1px solid #334155;
+  }
+
+  .user-tooltip {
+    top: auto;
+    bottom: 65px;
+    right: 0;
+    left: 0;
+    width: auto;
+  }
 }

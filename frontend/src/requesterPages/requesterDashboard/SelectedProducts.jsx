@@ -4,7 +4,7 @@ import "./SelectedProducts.css";
 
 export default function SelectedProducts({ onSend }) {
   const { selectedItems, setSelectedItems } = useSelectedItems();
-  // 🔥 UPDATE QUANTITY
+
   const updateQty = (stockId, qty) => {
     setSelectedItems((prev) =>
       prev.map((item) =>
@@ -13,16 +13,13 @@ export default function SelectedProducts({ onSend }) {
     );
   };
 
-  // 🔥 REMOVE ITEM
   const removeItem = (stockId) => {
     setSelectedItems((prev) => prev.filter((item) => item.StockID !== stockId));
   };
 
   const getMaxQty = (item) => {
     const price = item.Price || 1;
-
     const maxByCredit = Math.floor(item.RemainingCredit / price);
-
     return Math.min(item.Quantity, maxByCredit);
   };
 
