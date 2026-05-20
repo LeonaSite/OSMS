@@ -79,7 +79,7 @@
   background: white;
   border-radius: 10px;
   padding: 16px;
-  width: 220px;
+  width: 250px;
   max-height: 150px;
   min-height: 150px;
   box-sizing: border-box;
@@ -140,6 +140,7 @@
 
 .unit {
   color: #64748b;
+  font-size: 14px;
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -193,5 +194,14 @@
 
   .desc {
     font-size: 12px;
+  }
+
+  .pending-indication {
+    font-size: 8px;
+  }
+
+  .unit {
+    color: #64748b;
+    font-size: 10px;
   }
 }
